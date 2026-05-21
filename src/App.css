@@ -691,3 +691,45 @@ body {
     font-size: 16px !important;
   }
 }
+/* FIX HEADER LOGO OVERLAP */
+@media (max-width: 640px) {
+  .header {
+    padding: 18px 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .brand-header {
+    display: grid !important;
+    grid-template-columns: 76px 1fr !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  .brand-logo {
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: contain !important;
+    transform: none !important;
+  }
+
+  .brand-text {
+    text-align: center !important;
+  }
+
+  .brand-text h1 {
+    font-size: 22px !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-sub {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-count,
+  .hero-phone {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+}
