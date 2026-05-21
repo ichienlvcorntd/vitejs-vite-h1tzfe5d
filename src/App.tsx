@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import './App.css';
-
+import suzukiLogo from './assets/suzuki.png'
 const CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vTmX8wOuEbK1PlUc4nM6J7fS2SE5ii6Teicw1vsnzrca0xtwzDvp0gG4sfnS9R0URHDgVjKwtHmDis9/pub?gid=379826776&single=true&output=csv';
 
@@ -95,9 +95,13 @@ export default function App() {
     <main className="app">
       <header className="header">
   <div className="brand-header">
-    <img src="/src/assets/suzuki.png" alt="Suzuki" />
+    <img
+      src={suzukiLogo}
+      alt="Suzuki"
+      className="brand-logo"
+    />
 
-    <div>
+    <div className="brand-text">
       <h1>Suzuki Toàn Phát</h1>
 
       <p className="hero-sub">
@@ -115,7 +119,7 @@ export default function App() {
   </div>
 </header>
 
-      <section className="controls">
+      <section clatssName="controls">
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}

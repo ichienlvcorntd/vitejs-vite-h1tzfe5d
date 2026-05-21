@@ -346,3 +346,97 @@ input::placeholder {
 
   opacity: 1 !important;
 }
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.brand-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.brand-text {
+  text-align: center;
+}
+
+.brand-text h1 {
+  font-size: 72px;
+  line-height: 0.95;
+  color: #ffffff;
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.45);
+}
+
+.hero-sub {
+  color: rgba(255,255,255,0.88);
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.hero-count {
+  color: rgba(255,255,255,0.78);
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.hero-phone {
+  margin-top: 18px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 900;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 640px) {
+  .brand-header {
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .brand-logo {
+    width: 95px;
+    height: 95px;
+  }
+
+  .brand-text h1 {
+    font-size: 44px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+  }
+
+  .hero-count {
+    font-size: 18px;
+  }
+
+  .hero-phone {
+    font-size: 18px;
+  }
+}
