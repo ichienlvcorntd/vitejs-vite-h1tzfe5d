@@ -94,9 +94,26 @@ export default function App() {
   return (
     <main className="app">
       <header className="header">
-        <h1>Catalog Phụ Tùng</h1>
-        <p>{products.length} sản phẩm</p>
-      </header>
+  <div className="brand-header">
+    <img src="/src/assets/suzuki.png" alt="Suzuki" />
+
+    <div>
+      <h1>Suzuki Toàn Phát</h1>
+
+      <p className="hero-sub">
+        Tổng kho phụ tùng chính hãng
+      </p>
+
+      <p className="hero-count">
+        {products.length} sản phẩm
+      </p>
+
+      <p className="hero-phone">
+        ☎ Hotline/Zalo: 0865316207
+      </p>
+    </div>
+  </div>
+</header>
 
       <section className="controls">
         <input
@@ -130,11 +147,30 @@ export default function App() {
                 <p className="price">{p.price}</p>
                 <p className="status">{p.status}</p>
 
-                {p.link && (
-                  <a href={p.link} target="_blank">
-                    Xem chi tiết
-                  </a>
-                )}
+                <div className="contact-buttons">
+  <a
+    href="tel:0865316207"
+    className="contact-btn"
+  >
+    📞 Gọi ngay
+  </a>
+
+  <a
+    href="https://zalo.me/0865316207"
+    target="_blank"
+    className="contact-btn"
+  >
+    💬 Zalo
+  </a>
+
+  <a
+    href="https://www.facebook.com/phuongnghi.trieuhoang"
+    target="_blank"
+    className="contact-btn"
+  >
+    ⓕ Facebook
+  </a>
+</div>
               </div>
             </article>
           ))}
