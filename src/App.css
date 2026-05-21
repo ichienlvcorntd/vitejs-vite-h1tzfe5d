@@ -733,3 +733,34 @@ body {
     white-space: nowrap !important;
   }
 }
+@media (max-width: 640px) {
+  .brand-header {
+    display: grid !important;
+    grid-template-columns: 90px 1fr !important;
+    gap: 18px !important;
+    align-items: center !important;
+  }
+
+  .brand-logo {
+    width: 68px !important;
+    height: 68px !important;
+    margin-left: 6px !important;
+  }
+
+  .brand-text {
+    text-align: left !important;
+    padding-right: 8px !important;
+  }
+
+  .brand-text h1 {
+    font-size: 22px !important;
+    white-space: nowrap !important;
+    margin-bottom: 4px !important;
+  }
+
+  .hero-sub,
+  .hero-count,
+  .hero-phone {
+    white-space: nowrap !important;
+  }
+}
