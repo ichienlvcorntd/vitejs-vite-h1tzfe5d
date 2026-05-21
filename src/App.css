@@ -764,3 +764,65 @@ body {
     white-space: nowrap !important;
   }
 }
+/* HARD FIX MOBILE HEADER */
+@media (max-width: 640px) {
+  .header {
+    width: calc(100% - 24px) !important;
+    margin: 12px auto 18px !important;
+    padding: 14px 16px !important;
+    border-radius: 18px !important;
+    min-height: auto !important;
+  }
+
+  .brand-header {
+    display: grid !important;
+    grid-template-columns: 82px 1fr !important;
+    gap: 18px !important;
+    align-items: center !important;
+    justify-content: start !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .brand-logo {
+    width: 76px !important;
+    height: 76px !important;
+    object-fit: contain !important;
+    justify-self: start !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .brand-text {
+    text-align: left !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .brand-text h1 {
+    font-size: 20px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .hero-sub {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .hero-count {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  .hero-phone {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+}
