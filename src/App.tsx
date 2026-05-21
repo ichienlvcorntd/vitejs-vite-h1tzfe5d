@@ -119,7 +119,7 @@ export default function App() {
   </div>
 </header>
 
-      <section clatssName="controls">
+      <section className="controls">
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
