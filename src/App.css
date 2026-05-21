@@ -440,3 +440,125 @@ body {
     font-size: 18px;
   }
 }
+.header {
+  padding: 18px 18px !important;
+  border-radius: 24px !important;
+  margin-bottom: 22px !important;
+}
+
+.brand-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  padding: 0 !important;
+  flex-wrap: nowrap !important;
+}
+
+.brand-logo {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain !important;
+}
+
+.brand-text h1 {
+  font-size: 28px !important;
+  line-height: 1.05 !important;
+  margin: 0 !important;
+}
+
+.hero-sub {
+  font-size: 13px !important;
+  margin-top: 4px !important;
+}
+
+.hero-count {
+  font-size: 13px !important;
+  margin-top: 5px !important;
+}
+
+.hero-phone {
+  font-size: 13px !important;
+  margin-top: 5px !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 16px 14px !important;
+    border-radius: 22px !important;
+  }
+
+  .brand-logo {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .brand-text h1 {
+    font-size: 24px !important;
+  }
+
+  .hero-sub,
+  .hero-count,
+  .hero-phone {
+    font-size: 12px !important;
+  }
+}
+.price {
+  color: #dc2626 !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  margin-top: 14px !important;
+}
+
+.status {
+  color: #15803d !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  margin-top: 8px !important;
+}
+
+.card h2 {
+  color: #000000 !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+.model {
+  color: #6b7280 !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+.contact-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 18px !important;
+}
+
+.contact-buttons a,
+.contact-btn {
+  width: auto !important;
+  min-width: 100px !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  background: #111827 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+.card .price,
+.price {
+  color: #dc2626 !important;
+  -webkit-text-fill-color: #dc2626 !important;
+}
+
+.card .status,
+.status {
+  color: #15803d !important;
+  -webkit-text-fill-color: #15803d !important;
+}
