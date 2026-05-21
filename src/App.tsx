@@ -94,7 +94,7 @@ export default function App() {
   return (
     <main className="app">
       <header className="header">
-  <div className="brand-header">
+      <div className="brand">
     <img
       src={suzukiLogo}
       alt="Suzuki"
