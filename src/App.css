@@ -131,4 +131,42 @@ a {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}html,
+body,
+#root {
+  background: #f5f5f5 !important;
+  color: #111827 !important;
+  color-scheme: light !important;
+}
+
+.card,
+.content {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+.card h2,
+.card p,
+.model {
+  color: #111827 !important;
+}
+
+.price {
+  color: #dc2626 !important;
+}
+
+.status {
+  color: #15803d !important;
+}
+
+input,
+select {
+  background: #ffffff !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+input::placeholder {
+  color: #6b7280 !important;
+  -webkit-text-fill-color: #6b7280 !important;
 }
