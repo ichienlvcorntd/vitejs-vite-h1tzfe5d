@@ -598,3 +598,96 @@ body {
     margin-top: 4px !important;
   }
 }
+/* FINAL MOBILE HEADER FIX */
+.header {
+  padding: 16px 18px !important;
+  border-radius: 22px !important;
+  margin-bottom: 22px !important;
+}
+
+.brand-header {
+  display: grid !important;
+  grid-template-columns: 64px 1fr !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+.brand-logo {
+  width: 56px !important;
+  height: 56px !important;
+  object-fit: contain !important;
+}
+
+.brand-text {
+  text-align: center !important;
+  min-width: 0 !important;
+}
+
+.brand-text h1 {
+  font-size: 26px !important;
+  line-height: 1.05 !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  color: #ffffff !important;
+}
+
+.hero-sub {
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  margin-top: 4px !important;
+  color: rgba(255,255,255,0.9) !important;
+  font-weight: 700 !important;
+}
+
+.hero-count {
+  font-size: 12px !important;
+  margin-top: 5px !important;
+  color: rgba(255,255,255,0.78) !important;
+  font-weight: 700 !important;
+}
+
+.hero-phone {
+  font-size: 12px !important;
+  line-height: 1.15 !important;
+  margin-top: 5px !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+}
+
+/* Desktop / màn lớn */
+@media (min-width: 641px) {
+  .header {
+    padding: 22px 28px !important;
+    border-radius: 30px !important;
+  }
+
+  .brand-header {
+    grid-template-columns: 90px 1fr !important;
+    gap: 18px !important;
+    max-width: 760px !important;
+    margin: 0 auto !important;
+  }
+
+  .brand-logo {
+    width: 82px !important;
+    height: 82px !important;
+  }
+
+  .brand-text h1 {
+    font-size: 42px !important;
+  }
+
+  .hero-sub {
+    font-size: 17px !important;
+  }
+
+  .hero-count,
+  .hero-phone {
+    font-size: 16px !important;
+  }
+}
