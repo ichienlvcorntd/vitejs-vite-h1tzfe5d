@@ -562,3 +562,39 @@ body {
   color: #15803d !important;
   -webkit-text-fill-color: #15803d !important;
 }
+@media (max-width: 640px) {
+  .header {
+    padding: 14px 16px !important;
+  }
+
+  .brand-header {
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  .brand-logo {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .brand-text h1 {
+    font-size: 20px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-sub {
+    font-size: 11px !important;
+    margin-top: 3px !important;
+  }
+
+  .hero-count {
+    font-size: 11px !important;
+    margin-top: 4px !important;
+  }
+
+  .hero-phone {
+    font-size: 11px !important;
+    margin-top: 4px !important;
+  }
+}
