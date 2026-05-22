@@ -53,6 +53,7 @@ function parseCSV(text: string) {
 }
 
 export default function App() {
+  const [previewImage, setPreviewImage] = useState('');
   const [products, setProducts] = useState<Product[]>([]);
   const [q, setQ] = useState('');
   const [model, setModel] = useState('Tất cả');
@@ -140,7 +141,12 @@ export default function App() {
           {filtered.map((p, i) => (
             <article className="card" key={`${p.name}-${i}`}>
               {p.image ? (
-                <img src={p.image} alt={p.name} />
+                <img
+  src={p.image}
+  alt={p.name}
+  className="product-image"
+  onClick={() => setPreviewImage(p.image)}
+/>
               ) : (
                 <div className="noimg">Chưa có ảnh</div>
               )}
@@ -184,6 +190,11 @@ export default function App() {
       {!loading && filtered.length === 0 && (
         <div className="empty">Không tìm thấy sản phẩm</div>
       )}
+      {previewImage && (
+  <div className="preview-overlay" onClick={() => setPreviewImage('')}>
+    <img src={previewImage} className="preview-img" />
+  </div>
+)}
     </main>
   );
 }
