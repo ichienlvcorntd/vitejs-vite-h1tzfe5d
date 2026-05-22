@@ -880,3 +880,10 @@ body {
 .header {
   padding: 20px !important;
 }
+.card img {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  display: block !important;
+  image-rendering: high-quality !important;
+}
