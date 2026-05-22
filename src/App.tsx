@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 import suzukiLogo from './assets/suzuki.png'
+
 const CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vTmX8wOuEbK1PlUc4nM6J7fS2SE5ii6Teicw1vsnzrca0xtwzDvp0gG4sfnS9R0URHDgVjKwtHmDis9/pub?gid=379826776&single=true&output=csv';
 
 type Product = {
   name: string;
-  model: string;
+  models: string[];
   price: string;
   status: string;
   link: string;
@@ -67,7 +68,10 @@ export default function App() {
         const data = rows
           .map((r) => ({
             name: r[0] || '',
-            model: r[1] || '',
+            models: (r[1] || '')
+              .split('|')
+              .map((x) => x.trim())
+              .filter(Boolean),
             price: r[2] || '',
             status: r[3] || '',
             link: r[4] || '',
@@ -81,44 +85,44 @@ export default function App() {
   }, []);
 
   const models = useMemo(() => {
-    const list = products.map((p) => p.model).filter(Boolean);
+    const list = products.flatMap((p) => p.models).filter(Boolean);
     return ['Tất cả', ...Array.from(new Set(list))];
   }, [products]);
 
   const filtered = products.filter((p) => {
-    const text = `${p.name} ${p.model} ${p.price} ${p.search}`.toLowerCase();
+    const text = `${p.name} ${p.models.join(' ')} ${p.price} ${p.search}`.toLowerCase();
     const okSearch = text.includes(q.toLowerCase());
-    const okModel = model === 'Tất cả' || p.model === model;
+    const okModel = model === 'Tất cả' || p.models.includes(model);
     return okSearch && okModel;
   });
 
   return (
     <main className="app">
       <header className="header">
-      <div className="brand">
-    <img
-      src={suzukiLogo}
-      alt="Suzuki"
-      className="brand-logo"
-    />
+        <div className="brand">
+          <img
+            src={suzukiLogo}
+            alt="Suzuki"
+            className="brand-logo"
+          />
 
-    <div className="brand-text">
-      <h1>Suzuki Toàn Phát</h1>
+          <div className="brand-text">
+            <h1>Suzuki Toàn Phát</h1>
 
-      <p className="hero-sub">
-        Tổng kho phụ tùng chính hãng
-      </p>
+            <p className="hero-sub">
+              Tổng kho phụ tùng chính hãng
+            </p>
 
-      <p className="hero-count">
-        {products.length} sản phẩm
-      </p>
+            <p className="hero-count">
+              {products.length} sản phẩm
+            </p>
 
-      <p className="hero-phone">
-        ☎ Hotline/Zalo: 0865316207
-      </p>
-    </div>
-  </div>
-</header>
+            <p className="hero-phone">
+              ☎ Hotline/Zalo: 0865316207
+            </p>
+          </div>
+        </div>
+      </header>
 
       <section className="controls">
         <input
@@ -142,45 +146,47 @@ export default function App() {
             <article className="card" key={`${p.name}-${i}`}>
               {p.image ? (
                 <img
-  src={p.image}
-  alt={p.name}
-  className="product-image"
-  onClick={() => setPreviewImage(p.image)}
-/>
+                  src={p.image}
+                  alt={p.name}
+                  className="product-image"
+                  onClick={() => setPreviewImage(p.image)}
+                />
               ) : (
                 <div className="noimg">Chưa có ảnh</div>
               )}
 
               <div className="content">
                 <h2>{p.name}</h2>
-                <p className="model">{p.model || 'Chưa phân loại'}</p>
+                <p className="model">
+                  {p.models.length ? p.models.join(', ') : 'Chưa phân loại'}
+                </p>
                 <p className="price">{p.price}</p>
                 <p className="status">{p.status}</p>
 
                 <div className="contact-buttons">
-  <a
-    href="tel:0865316207"
-    className="contact-btn"
-  >
-    📞 Gọi ngay
-  </a>
+                  <a
+                    href="tel:0865316207"
+                    className="contact-btn"
+                  >
+                    📞 Gọi ngay
+                  </a>
 
-  <a
-    href="https://zalo.me/0865316207"
-    target="_blank"
-    className="contact-btn"
-  >
-    💬 Zalo
-  </a>
+                  <a
+                    href="https://zalo.me/0865316207"
+                    target="_blank"
+                    className="contact-btn"
+                  >
+                    💬 Zalo
+                  </a>
 
-  <a
-    href="https://www.facebook.com/phuongnghi.trieuhoang"
-    target="_blank"
-    className="contact-btn"
-  >
-    ⓕ Facebook
-  </a>
-</div>
+                  <a
+                    href="https://www.facebook.com/phuongnghi.trieuhoang"
+                    target="_blank"
+                    className="contact-btn"
+                  >
+                    ⓕ Facebook
+                  </a>
+                </div>
               </div>
             </article>
           ))}
@@ -190,11 +196,12 @@ export default function App() {
       {!loading && filtered.length === 0 && (
         <div className="empty">Không tìm thấy sản phẩm</div>
       )}
+
       {previewImage && (
-  <div className="preview-overlay" onClick={() => setPreviewImage('')}>
-    <img src={previewImage} className="preview-img" />
-  </div>
-)}
+        <div className="preview-overlay" onClick={() => setPreviewImage('')}>
+          <img src={previewImage} className="preview-img" />
+        </div>
+      )}
     </main>
   );
 }
